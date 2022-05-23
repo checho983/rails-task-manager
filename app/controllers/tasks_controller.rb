@@ -1,16 +1,17 @@
 class TasksController < ApplicationController
+
   def index
     @tasks = Task.all
+  end
+
+  def show
+    @task = Task.find(params[:id])
   end
 
   def new
   end
 
   def create
-  end
-
-  def show
-    @task = Task.find(params[:id])
   end
 
   def edit
@@ -22,9 +23,9 @@ class TasksController < ApplicationController
   def delete
   end
 
-  private
+  # private
 
-  def task_params
-    params.require(:task).permit(:name, :details, :completed)
-  end
+  # def task_params
+  #  params.require(:task).permit(:name, :details, :completed)
+  # end
 end
